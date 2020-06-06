@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Api Turimsmo</title>
+<link rel="stylesheet" type="text/css" href="static/css/style.css" media="screen" />
+</head>
+
+<body class="confirmacion">
+
+    <h2>{% print(lugar) %} se agregó correctamente</h2>
+    <form action="listarLugares" method="POST">
+        <div>
+          <input value="{{nombre}}" type="hidden" name="nombre" id="nombre">
+          <button style="position: absolute;top: 60%;right: 75%;" class="btn" type="submit">Volver</button>
+        </div>
+      </form>
+</body>

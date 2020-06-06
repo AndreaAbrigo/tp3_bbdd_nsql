@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Api Turimsmo</title>
+<link rel="stylesheet" type="text/css" href="static/css/style.css" media="screen" />
+</head>
+
+<body class="cuerpo2">
+    <center>
+    <div class="cuadro">
+    <h2>Agregar {% print(titulo) %}</h2>
+        <form action="nuevoLugar" method="POST">
+          <div>
+            <input value="{{nombre}}" type="hidden" name="nombre" id="nombre">
+            <input value="{{titulo}}" type="hidden" name="titulo" id="titulo">
+            <input type="text" name="lugar" id="lugar" placeholder="Ingresa el nombre"><br>
+            <p><input type="text" name="latitud" id="latitud" placeholder="Ingresa la latitud"><br></p>
+            <input type="text" name="longitud" id="longitud" placeholder="Ingresa la longitud"><br>
+            <button class="btn" type="submit">Agregar</button>
+          </div>
+        </form>
+    </div>
+</center>
+</body>
+</html>

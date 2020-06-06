@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Api Turimsmo</title>
+<link rel="stylesheet" type="text/css" href="static/css/style.css" media="screen" />
+</head>
+
+<body class="cuerpo">
+
+  <a class="btn-volver2" href="/">Volver</a>
+
+  <div class="texto">
+
+  <h1>{% print(titulo) %}</h1>
+
+  <table style="padding-left: 430px;">
+    <tr>
+      <td>
+    <form action="cargarLugar" method="POST">
+        <input value="{{nombre}}" type="hidden" name="nombre" id="nombre">
+        <input value="{{titulo}}" type="hidden" name="titulo" id="titulo">
+        <button  class="botones" type="submit">Agregar {% print(nombre) %}</button>
+    </form>
+  </td>
+  <td>
+    <form action="lugaresCerca" method="POST">
+        <input value="{{nombre}}" type="hidden" name="nombre" id="nombre">
+        <input value="{{titulo}}" type="hidden" name="titulo" id="titulo">
+        <button  class="botones" type="submit">Ver {% print(nombre) %} cerca</button>
+    </form>
+  </td>
+   </tr>
+  </table>
+
+  <h5 style="color: black;">Has click sobre el lugar para saber a qué distancia te encuentras</h5>
+ 
+    {% for lugar in lugares %}
+      {% if (lugar == "here"): %}
+        {{ pass }} 
+      {%else%}
+      <form action="devolverDistancia" method="POST">
+        <input value="{{nombre}}" type="hidden" name="nombre" id="nombre"> 
+        <input value="{{lugar}}" type="hidden" name="lugar" id="lugar">
+        <button class="btn-valor" type="submit">{% print(lugar) %}</button>
+      </form> 
+      {%endif%}
+    {%endfor%}
+   
+  </div>
+
+</body>
